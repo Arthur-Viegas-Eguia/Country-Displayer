@@ -4,45 +4,22 @@ import java.util.List;
 import java.util.ArrayList;
 import java.io.FileNotFoundException;
 /**
- * CountryDisplayer class models a list of countries.
- * It has methods to show the indicators of specific countries
- * or return the countries which have the maximum/minimum value in 
- * a certain indicator
+ * CountryDisplayer class has methods to show the indicators of
+ * specific countries or return the countries which have the
+ * maximum/minimum value in a certain indicator
  * @author Arthur Viegas Eguia
  */
 public class CountryDisplayer {
-    /**
-     * countries is an ArrayList which represents the list of all countries
-     * used in the program. 
-     */
     ArrayList<Country> countries;
     /**
-     * Constructs the class. Initializes the variable countries.
-     * Reads information from a list of countries provided by the user
-     * processes this data, and stores it.
+     * Constructs the class, Reading information from a list of
+     * countries provided by the user.
      * @param fileName a String representing the path to a file containing a list of countries
      */
     public CountryDisplayer(String fileName) {
-        /**
-         * Variable filePath represents the path of the file sent by the user.
-         * Here the variable is initialized as an instance of File.
-         */
         File filePath = new File(fileName);
-        /**
-         * fileInput is the variable which will hold the scanner. This variable
-         * will be responsible to read each line of the file and return the
-         * data for it to be processed by the program.
-         */
         Scanner fileInput = null;
-        /**
-         * line variable is going to receive a line of the file from the
-         * scanner.
-         */
         String line;
-        /**
-         * splitLine is going to be an array where the data of the file is
-         * stored after being processed. 
-         */
         String[] splitLine;
         countries = new ArrayList<>();
         try{
@@ -51,24 +28,11 @@ public class CountryDisplayer {
             System.out.println("The path to the file is wrong, or there may be a typo");
             System.exit(1);
         } //end try catch
-        /**
-         * Now let's skip the file header, which says the order each piece
-         * of information goes. This was already modeled in the Country class
-         */
-        fileInput.nextLine();
+        fileInput.nextLine(); //skips the file header
         if(!fileInput.hasNextLine()){
-            /**
-             * If there are 0 countries in the file, the code prints a message
-             * and stops running.
-             */
             System.out.println("There are no lines in the file, just a header.");
             System.exit(1);
         } else{
-            /**
-             * This part is where the data is tprocessed, it gets each of the
-             * indicators and, as they are already in order in the file,
-             * adds them to the variable countries
-             */
             while(fileInput.hasNextLine()){
                 line = fileInput.nextLine();
                 splitLine = line.split(",");
@@ -131,7 +95,6 @@ public class CountryDisplayer {
     } //end getCountryMinIndicator
     /**
      * Models a menu which asks a user to type the name of a country.
-     * Handles problems if input is not in the list.
      * Prints all the indicators of a country in an organized way
      */
     public void findByNameMenu(){
@@ -158,7 +121,6 @@ public class CountryDisplayer {
      } //end findByNameMenu
      /**
      * Models a menu which asks a user to type the indicator they wish.
-     * Handles problems if input is not valid.
      * Prints the name of the country which has the maximum value
      * of the desired indicator.
      */
@@ -194,7 +156,6 @@ public class CountryDisplayer {
      } //end findByMaxMenu
      /**
      * Models a menu which asks a user to type the indicator they wish.
-     * Handles problems if input is not valid.
      * Prints the name of the country which has the minimum value
      * of the desired indicator.
      */
@@ -243,7 +204,6 @@ public class CountryDisplayer {
      } //end printOptions
      /**
      * Models a menu which asks a user to type the country and indicator they wish
-     * Handles problems if the input is not valid.
      * Prints the name of the country followed by the
      * desired indicator in an organized way.
      */
