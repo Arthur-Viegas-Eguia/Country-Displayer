@@ -1,14 +1,10 @@
 import java.util.HashMap;
 import java.util.HashMap;
 /**
- *  Country class contains information about a country and its indicators.
- * It also has methods for an user to access them.
+ *  Country class contains information about a country and its indicators,
+ * and has methods for an user to access them.
  */
 public class Country{
-    /**
-     * variable country is a HashMap which stores the name of the country and
-     * all its indicators.
-     */
     private HashMap<String, String> country;
     /**
      * Creates the HashMap and adds to it the name of the country and
