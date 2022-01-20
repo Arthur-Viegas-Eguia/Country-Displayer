@@ -1,5 +1,5 @@
 # Country-Displayer
-Homework 2 developed for the Data Structure class taught by Anya Vostinar
+Adaptation of code originally developed as Homework 2 for the Data Structure class taught by Anya Vostinar
 ## Overview
 The program provides the user with methods to see indicators of specific countries or a the country which has the maximum/minimum value at a certain indicator
 With this program you can:
